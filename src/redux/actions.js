@@ -1,15 +1,12 @@
 import {SET_EMPLOYEES, SET_WORKLOG} from "./constants";
+import {getEmployees, getWorklog} from "../api";
 
-export function setEmployees (employees) {
-    return {
-        type: SET_EMPLOYEES,
-        payload: employees
-    }
+export const setEmployees = async (dispatch) => {
+    const doctors = await getEmployees()
+    dispatch({type: SET_EMPLOYEES, payload: doctors})
 }
 
-export function setWorklog (worklog) {
-    return {
-        type: SET_WORKLOG,
-        payload: worklog
-    }
+export const setWorklog = async (dispatch) => {
+    const worklog = await getWorklog()
+    dispatch({type: SET_WORKLOG, payload: worklog})
 }

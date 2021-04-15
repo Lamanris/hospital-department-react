@@ -42,8 +42,9 @@ export default function Worklog () {
     const employees = useSelector(state => state.employees)
     const worklog = useSelector(state => state.worklog)
 
-
+    console.log(worklog)
     const doctor = [...employees].filter(el => el.id === +params.employeeId)[0]
+
 
 
     const sortedWorklog = [...worklog].sort((a, b) => a.from > b.from ? 1 : -1)

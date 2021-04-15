@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 }
 });
 
-export default function CustomizedTables() {
+export default function Dashboard() {
     const classes = useStyles();
     const employees = useSelector(state => state.employees)
 
